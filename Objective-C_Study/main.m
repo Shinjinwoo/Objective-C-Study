@@ -64,8 +64,8 @@ int main(int argc, const char * argv[]) {
         
         /**
          메시지 보내기는 항상 대괄호, 크게 2분류
-            1. 메시지를 받는 객체의 포인터
-            2. 트리거 될 메소드의 이름
+         1. 메시지를 받는 객체의 포인터
+         2. 트리거 될 메소드의 이름
          */
         
         
@@ -91,6 +91,120 @@ int main(int argc, const char * argv[]) {
         float surviveSec = [now timeIntervalSinceDate:dateOfBirth];
         NSLog(@"생일부터 지금까지 생존한 시간 %.0f",surviveSec);
         
+        
+        NSLog(@"======================================================================");
+        NSLog(@"============================ 메시지 보내기 심화 ==========================");
+        
+        /**
+         NSDate *now = [NSDate date];
+         
+         -> date 메소드 = 클래스 메소드 즉, NSDate 클래스에 메시지를 보내 메소드가 실행되도록 한다. date 메소드는 NSDate 인스턴스의 객체 주소 ( 포인터 )를 리턴한다.
+         
+         double seconds = [now timeIntervalSince1970];
+         NSDate *later = [now dateByAddingTimeInterval : 10000];
+         
+         -> timeIntervalSince1970,dateByAddingTimeInterval 인스턴스 메소드
+         */
+        
+        //alloc은 초기화 해야할 객체의 메모리 주소(포인터)를 리턴한다.
+        //이 포인터는 init 메시지를 보내는데 사용 된다
+        //Apple에서 공식적으로 사용하는 방식이기도 하다.
+        NSDate *alloctest = [[NSDate alloc]init];
+        
+        
+        //여러개의 인수
+        //xcode에서 콜론을 기준으로 자동정렬 해준다.
+        NSCalendar *cal = [NSCalendar currentCalendar];
+        NSUInteger day = [cal ordinalityOfUnit:NSCalendarUnitDay
+                                        inUnit:NSCalendarUnitMonth
+                                       forDate:alloctest];
+        
+        NSLog(@"This is day %lu of the month", day);
+        
+        
+        //객체지향 언어라면 거의 모두 nil이라는 개념을 갖춤.
+        //어떠한 객체도 가르키지 않는 포인터가 바로 nil
+        
+        if (alloctest != nil) {
+            NSCalendar *cal = [NSCalendar currentCalendar];
+            NSUInteger day = [cal ordinalityOfUnit:NSCalendarUnitDay
+                                            inUnit:NSCalendarUnitMonth
+                                           forDate:alloctest];
+            NSLog(@"This is day %lu of the month", day);
+        }
+        
+        
+        //도전과제, NSTimeZone 클래스를 이용해 일광절약제의 적용을 받는지 알아보기
+        NSTimeZone *nsTimeZone = [NSTimeZone systemTimeZone];
+        
+        if([nsTimeZone isDaylightSavingTime]){
+            NSLog(@"일광절약제 적용 받음");
+        } else {
+            NSLog(@"일광절약제 안받음");
+        }
+        
+        NSLog(@"======================================================================");
+        NSLog(@"============================ NSString ================================");
+        
+        /**
+         NSString도 NSDate 처럼 클래스이다. NSString의 인스턴스들은 문자들로 구성된 열을 담는다.
+         */
+        
+        NSString *lament = @"why me?";
+        NSLog(@"length of lament is %lu",(unsigned long)[lament length]);
+        
+        //도전과제 NSHost 클래스를 활용한 현지화 된 문자열 반환
+        NSHost *nsHost = [NSHost currentHost];
+        NSLog(@"현지화 된 컴퓨터 이름 : %@",[nsHost localizedName]);
+        
+        NSLog(@"======================================================================");
+        NSLog(@"============================ NSArray =================================");
+        
+        NSDate *currentDate = [NSDate date];
+        NSDate *tomorrow = [currentDate dateByAddingTimeInterval:24.0 * 60.0 * 60.0];
+        NSDate *yesterday = [currentDate dateByAddingTimeInterval:-24.0 * 60.0 * 60.0];
+        
+        NSArray *dateList = [NSArray arrayWithObjects:now,tomorrow,yesterday, nil];
+        NSUInteger count = [dateList count];
+        
+        NSLog(@"배열의 인자 개수 %lu",count);
+        NSLog(@"첫번째 인덱스 조회 %@",[dateList objectAtIndex:0]);
+        NSLog(@"세번째 인덱스 조회 %@",[dateList objectAtIndex:2]);
+        
+        for(int i = 0; i < count; i++) {
+            NSDate *d = [dateList objectAtIndex:i];
+            NSLog(@"Here is a date : %@",d);
+        }
+        
+        NSLog(@"======================================================================");
+        NSLog(@"============================ NSMutableArray =================================");
+        
+        /**
+         배열은 크게 2가지로 나뉨,
+            1. NSArray : 포인터들의 리스트로 만드는 NSArray의 인스턴스 -> 포인터의 추가 및 삭제가 불가능.
+            2. NSMutableArray : 포인터의 추가 및 삭제가 가능.
+         */
+        
+        NSMutableArray *mutableDateList = [NSMutableArray array];
+        //빈 배열 생성
+        
+        [mutableDateList addObject:now];
+        [mutableDateList addObject:tomorrow];
+        [mutableDateList insertObject:yesterday atIndex:0];
+        
+        for (NSDate *d in mutableDateList) {
+            NSLog(@"Here is a Date %@",d);
+        }
+        
+        NSLog(@"어제를 삭제");
+        [mutableDateList removeObjectAtIndex:0];
+        
+        for (NSDate *d in mutableDateList) {
+            NSLog(@"Here is a Date %@",d);
+        }
+        
+        
+        //도전과제
         
         
         
