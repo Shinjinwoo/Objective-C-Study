@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
         NSDate *now = [NSDate date];
         NSLog(@"The new Date lives at %p",now);
         
-        NSLog(@"형상관리");
+        NSLog(@"형상관리ㅇㅇㅇ");
         
         
         
