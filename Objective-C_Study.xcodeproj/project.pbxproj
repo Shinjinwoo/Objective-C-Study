@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBCB28D9533B006FBF8E /* Person.m */; };
 		5EAA493728409D7C00A835A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA493628409D7C00A835A3 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E5CEBCA28D9533B006FBF8E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		5E5CEBCB28D9533B006FBF8E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5EAA493328409D7C00A835A3 /* Objective-C_Study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Objective-C_Study"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAA493628409D7C00A835A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				5EAA493628409D7C00A835A3 /* main.m */,
+				5E5CEBCA28D9533B006FBF8E /* Person.h */,
+				5E5CEBCB28D9533B006FBF8E /* Person.m */,
 			);
 			path = "Objective-C_Study";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */,
 				5EAA493728409D7C00A835A3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
