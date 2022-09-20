@@ -10,6 +10,7 @@
 #import "StockHolding.h"
 #import "Employee.h"
 #import "ForeignStockHolding.h"
+#import "Asset.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -297,7 +298,50 @@ int main(int argc, const char * argv[]) {
         float employeeBMI = [employee bodyMassIndex];
         NSLog(@"Employee %d has a BMI of %f",[employee employeeID],employeeBMI);
         
-
+        
+        NSLog(@"=============================================================================");
+        NSLog(@"=============================== 객체 인스턴스 변수 ===============================");
+        
+        NSMutableArray *employees = [[NSMutableArray alloc]init];
+        
+        
+        for (int i = 0; i < 10; i++) {
+            //Employee 인스턴스 생성
+            Employee *empPerson = [[Employee alloc]init];
+            
+            [empPerson setWeightInKilos:80 + i];
+            [empPerson setHeightInMeters:1.83 - i/10.0];
+            [empPerson setEmployeeID:i];
+            
+            [employees addObject:empPerson];
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            //비품 10개 생성 및 난수로 에셋의 벨류 설정
+            Asset *asset = [[Asset alloc]init];
+            
+            NSString *currentLabel = [NSString stringWithFormat:@"Laptop %d",i];
+            [asset setLabel:currentLabel];
+            [asset setResaleValue:i * 17];
+            
+            // 0 ~ 9 까지 임의의 수
+            NSUInteger randomIndex = random() % [employees count];
+            
+            //해당 직원 찾기
+            Employee *randomEmployee = [employees objectAtIndex:randomIndex];
+            
+            //찾은 직원에게 비품을 배정한다.
+            [randomEmployee addAssetsObject:asset];
+        }
+        
+        NSLog(@"Employees : %@",employees);
+        NSLog(@"Giving up ownership of one employee");
+        
+        [employees removeObjectAtIndex:5];
+        NSLog(@"Giving up ownership of array");
+        
+        employees = nil;
+        
         
     }
     return 0;
