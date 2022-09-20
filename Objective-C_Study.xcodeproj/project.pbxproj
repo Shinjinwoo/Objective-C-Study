@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBCB28D9533B006FBF8E /* Person.m */; };
+		5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD328D9795A006FBF8E /* StockHolding.m */; };
 		5EAA493728409D7C00A835A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA493628409D7C00A835A3 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		5E5CEBCA28D9533B006FBF8E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		5E5CEBCB28D9533B006FBF8E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		5E5CEBD228D9795A006FBF8E /* StockHolding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockHolding.h; sourceTree = "<group>"; };
+		5E5CEBD328D9795A006FBF8E /* StockHolding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockHolding.m; sourceTree = "<group>"; };
 		5EAA493328409D7C00A835A3 /* Objective-C_Study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Objective-C_Study"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAA493628409D7C00A835A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +66,8 @@
 				5EAA493628409D7C00A835A3 /* main.m */,
 				5E5CEBCA28D9533B006FBF8E /* Person.h */,
 				5E5CEBCB28D9533B006FBF8E /* Person.m */,
+				5E5CEBD228D9795A006FBF8E /* StockHolding.h */,
+				5E5CEBD328D9795A006FBF8E /* StockHolding.m */,
 			);
 			path = "Objective-C_Study";
 			sourceTree = "<group>";
@@ -94,7 +99,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					5EAA493228409D7C00A835A3 = {
 						CreatedOnToolsVersion = 13.4;
@@ -126,6 +131,7 @@
 			files = (
 				5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */,
 				5EAA493728409D7C00A835A3 /* main.m in Sources */,
+				5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +171,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -223,6 +230,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -244,7 +252,9 @@
 		5EAA493B28409D7C00A835A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RAH8A8577Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -254,7 +264,9 @@
 		5EAA493C28409D7C00A835A3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = RAH8A8577Q;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

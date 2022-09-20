@@ -6,6 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Person.h"
+#import "StockHolding.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -24,8 +26,8 @@ int main(int argc, const char * argv[]) {
         float angleC = remainingAngle(angleA,angleB);
         printf("the Thierd angle is %.2f\n",angleC);
         
-        NSLog(@"======================================================================");
-        NSLog(@"============================ 포인터 ====================================");
+        NSLog(@"==========================================================================");
+        NSLog(@"============================ 포인터 ========================================");
         
         //컴퓨터의 모든 것은 메모리에 저장되므로 모든 것이 주소를 가진다.-> 메모리 주소는 거의 16진수로 이루어짐.
         int integerPointer = 17;
@@ -50,8 +52,8 @@ int main(int argc, const char * argv[]) {
         
         
         
-        NSLog(@"======================================================================");
-        NSLog(@"============================ 객체 =====================================");
+        NSLog(@"=============================================================================");
+        NSLog(@"================================== 객체 ======================================");
         
         //객체 생성
         NSDate *now = [NSDate date];
@@ -92,8 +94,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"생일부터 지금까지 생존한 시간 %.0f",surviveSec);
         
         
-        NSLog(@"======================================================================");
-        NSLog(@"============================ 메시지 보내기 심화 ==========================");
+        NSLog(@"=============================================================================");
+        NSLog(@"=============================== 메시지 보내기 심화 ===============================");
         
         /**
          NSDate *now = [NSDate date];
@@ -143,8 +145,8 @@ int main(int argc, const char * argv[]) {
             NSLog(@"일광절약제 안받음");
         }
         
-        NSLog(@"======================================================================");
-        NSLog(@"============================ NSString ================================");
+        NSLog(@"=============================================================================");
+        NSLog(@"================================= NSString ==================================");
         
         /**
          NSString도 NSDate 처럼 클래스이다. NSString의 인스턴스들은 문자들로 구성된 열을 담는다.
@@ -157,8 +159,8 @@ int main(int argc, const char * argv[]) {
         NSHost *nsHost = [NSHost currentHost];
         NSLog(@"현지화 된 컴퓨터 이름 : %@",[nsHost localizedName]);
         
-        NSLog(@"======================================================================");
-        NSLog(@"============================ NSArray =================================");
+        NSLog(@"=============================================================================");
+        NSLog(@"================================= NSArray ===================================");
         
         NSDate *currentDate = [NSDate date];
         NSDate *tomorrow = [currentDate dateByAddingTimeInterval:24.0 * 60.0 * 60.0];
@@ -237,7 +239,47 @@ int main(int argc, const char * argv[]) {
         
         //임의의 배열을 생성후 문자열을 잘라서 만든 배열과 비교하는 문제인줄 알았는데.... 그런 문제가 아니였음 PASS
         
+        NSLog(@"=============================================================================");
+        NSLog(@"================================= Class =====================================");
         
+        Person *person = [[Person alloc]init];
+        
+        [person setWeightInKilos:83];
+        [person setHeightInMeters:1.83];
+        
+        // bodyMassIndex 메소드 호출
+        float bmi = [person bodyMassIndex];
+        NSLog(@"BMI 지수 : %f", bmi );
+        NSLog(@"property : %f , %d",[person heightInMeters],[person weightInKilos]);
+        
+        
+        // 도전과제 StrockHoldings 객체 3개 생성 후 인스턴스 변수와 인스턴스 메소드로 값 출력하기
+        
+        StockHolding *stock1 = [[StockHolding alloc]init];
+        StockHolding *stock2 = [[StockHolding alloc]init];
+        StockHolding *stock3 = [[StockHolding alloc]init];
+
+        NSArray *stockArray = [NSArray arrayWithObjects:stock1,stock2,stock3,nil];
+        
+        for ( int i = 0; i<[stockArray count]; i++) {
+            switch(i){
+                case 0:
+                    [[stockArray objectAtIndex:0] setPurchaseSharePrice:2.30];
+                    [[stockArray objectAtIndex:0] setCurrentSharePrice:4.50];
+                    [[stockArray objectAtIndex:0] setNumberOfShares:40];
+                case 1:
+                    [[stockArray objectAtIndex:1] setPurchaseSharePrice:12.19];
+                    [[stockArray objectAtIndex:1] setCurrentSharePrice:10.56];
+                    [[stockArray objectAtIndex:1] setNumberOfShares:90];
+                case 2:
+                    [[stockArray objectAtIndex:2] setPurchaseSharePrice:45.10];
+                    [[stockArray objectAtIndex:2] setCurrentSharePrice:49.51];
+                    [[stockArray objectAtIndex:2] setNumberOfShares:210];
+            }
+            
+            NSLog(@"%d 번째 배열 costInDollars : %f",i+1,[[stockArray objectAtIndex:i] costInDollars]);
+            NSLog(@"%d 번째 배열 valueInDollars : %f",i+1,[[stockArray objectAtIndex:i] valueInDollars]);
+        }
         
         
         

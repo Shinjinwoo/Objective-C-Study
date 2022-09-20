@@ -8,16 +8,12 @@
 #import "Person.h"
 
 @implementation Person
-- (void)setHeightInMeters:(float)h {
-    heightInMeters = h;
-}
 
-- (void)setWeightInKilos:(int)w {
-    weightInKilos = w;
-}
+@synthesize heightInMeters,weightInKilos;
 
 - (float)bodyMassIndex {
-    return weightInKilos / ( heightInMeters * heightInMeters );
+    float h = [self heightInMeters];
+    
+    return [self weightInKilos] / ( h * h );
 }
-
 @end
