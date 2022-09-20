@@ -176,7 +176,7 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Here is a date : %@",d);
         }
         
-        NSLog(@"======================================================================");
+        NSLog(@"=============================================================================");
         NSLog(@"============================ NSMutableArray =================================");
         
         /**
@@ -205,6 +205,40 @@ int main(int argc, const char * argv[]) {
         
         
         //도전과제
+        //파일을 통째로 읽어들여 문자열 배열을 비교한다. ( 대소문자 구분 X )
+        
+        NSMutableArray *nsMutalbeArray = [NSMutableArray array];
+        
+        [nsMutalbeArray addObject:@"fork"];
+        [nsMutalbeArray addObject:@"greek"];
+        [nsMutalbeArray addObject:@"glen"];
+        
+        NSString *nameString = [NSString stringWithContentsOfFile:@"usr/share/dict/propernames"
+                                                         encoding:NSUTF8StringEncoding
+                                                            error:NULL];
+        //파일을 읽어들여 문자열 리턴
+        NSArray *nameArray = [nameString componentsSeparatedByString:@"\n"];
+        
+        
+        for (NSString *n in nameArray){
+            NSRange r = [n rangeOfString:@"AA" options:NSCaseInsensitiveSearch];
+            if(r.location != NSNotFound) {
+                NSLog(@"%@",n);
+            }
+        }
+        
+        for ( int i = 0; i < nameArray.count; i++ ) {
+            for ( int j = 0; j < nsMutalbeArray.count; i ++ ) {
+                if ( [[nameArray objectAtIndex:i]caseInsensitiveCompare:[nsMutalbeArray objectAtIndex:j]]) {
+                    NSLog(@"이게 머선일 문제를 잘못 이해했네 ㅋㅋㅋㅋㅋㅋ");
+                }
+            }
+        }
+        
+        //임의의 배열을 생성후 문자열을 잘라서 만든 배열과 비교하는 문제인줄 알았는데.... 그런 문제가 아니였음 PASS
+        
+        
+        
         
         
         
