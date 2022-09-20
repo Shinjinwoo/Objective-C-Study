@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBCB28D9533B006FBF8E /* Person.m */; };
 		5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD328D9795A006FBF8E /* StockHolding.m */; };
+		5E5CEBD728D98454006FBF8E /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD628D98454006FBF8E /* Employee.m */; };
+		5E5CEBDA28D98E7C006FBF8E /* ForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD928D98E7C006FBF8E /* ForeignStockHolding.m */; };
 		5EAA493728409D7C00A835A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA493628409D7C00A835A3 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,10 @@
 		5E5CEBCB28D9533B006FBF8E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5E5CEBD228D9795A006FBF8E /* StockHolding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockHolding.h; sourceTree = "<group>"; };
 		5E5CEBD328D9795A006FBF8E /* StockHolding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StockHolding.m; sourceTree = "<group>"; };
+		5E5CEBD528D98454006FBF8E /* Employee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		5E5CEBD628D98454006FBF8E /* Employee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		5E5CEBD828D98E7C006FBF8E /* ForeignStockHolding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForeignStockHolding.h; sourceTree = "<group>"; };
+		5E5CEBD928D98E7C006FBF8E /* ForeignStockHolding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForeignStockHolding.m; sourceTree = "<group>"; };
 		5EAA493328409D7C00A835A3 /* Objective-C_Study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Objective-C_Study"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAA493628409D7C00A835A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +74,10 @@
 				5E5CEBCB28D9533B006FBF8E /* Person.m */,
 				5E5CEBD228D9795A006FBF8E /* StockHolding.h */,
 				5E5CEBD328D9795A006FBF8E /* StockHolding.m */,
+				5E5CEBD528D98454006FBF8E /* Employee.h */,
+				5E5CEBD628D98454006FBF8E /* Employee.m */,
+				5E5CEBD828D98E7C006FBF8E /* ForeignStockHolding.h */,
+				5E5CEBD928D98E7C006FBF8E /* ForeignStockHolding.m */,
 			);
 			path = "Objective-C_Study";
 			sourceTree = "<group>";
@@ -130,6 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */,
+				5E5CEBDA28D98E7C006FBF8E /* ForeignStockHolding.m in Sources */,
+				5E5CEBD728D98454006FBF8E /* Employee.m in Sources */,
 				5EAA493728409D7C00A835A3 /* main.m in Sources */,
 				5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */,
 			);

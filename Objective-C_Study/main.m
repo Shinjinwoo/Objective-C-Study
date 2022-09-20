@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "Person.h"
 #import "StockHolding.h"
+#import "Employee.h"
+#import "ForeignStockHolding.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -257,7 +259,7 @@ int main(int argc, const char * argv[]) {
         
         StockHolding *stock1 = [[StockHolding alloc]init];
         StockHolding *stock2 = [[StockHolding alloc]init];
-        StockHolding *stock3 = [[StockHolding alloc]init];
+        ForeignStockHolding *stock3 = [[ForeignStockHolding alloc]init];
 
         NSArray *stockArray = [NSArray arrayWithObjects:stock1,stock2,stock3,nil];
         
@@ -275,6 +277,7 @@ int main(int argc, const char * argv[]) {
                     [[stockArray objectAtIndex:2] setPurchaseSharePrice:45.10];
                     [[stockArray objectAtIndex:2] setCurrentSharePrice:49.51];
                     [[stockArray objectAtIndex:2] setNumberOfShares:210];
+                    [[stockArray objectAtIndex:2] setConversionRate:0.94];
             }
             
             NSLog(@"%d 번째 배열 costInDollars : %f",i+1,[[stockArray objectAtIndex:i] costInDollars]);
@@ -282,7 +285,19 @@ int main(int argc, const char * argv[]) {
         }
         
         
+        NSLog(@"=============================================================================");
+        NSLog(@"================================= 상속 =======================================");
         
+        Employee *employee = [[Employee alloc]init];
+        
+        [employee setWeightInKilos:83];
+        [employee setHeightInMeters:1.83];
+        [employee setEmployeeID:15];
+    
+        float employeeBMI = [employee bodyMassIndex];
+        NSLog(@"Employee %d has a BMI of %f",[employee employeeID],employeeBMI);
+        
+
         
     }
     return 0;
