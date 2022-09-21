@@ -186,8 +186,8 @@ int main(int argc, const char * argv[]) {
         
         /**
          배열은 크게 2가지로 나뉨,
-            1. NSArray : 포인터들의 리스트로 만드는 NSArray의 인스턴스 -> 포인터의 추가 및 삭제가 불가능.
-            2. NSMutableArray : 포인터의 추가 및 삭제가 가능.
+         1. NSArray : 포인터들의 리스트로 만드는 NSArray의 인스턴스 -> 포인터의 추가 및 삭제가 불가능.
+         2. NSMutableArray : 포인터의 추가 및 삭제가 가능.
          */
         
         NSMutableArray *mutableDateList = [NSMutableArray array];
@@ -261,7 +261,7 @@ int main(int argc, const char * argv[]) {
         StockHolding *stock1 = [[StockHolding alloc]init];
         StockHolding *stock2 = [[StockHolding alloc]init];
         ForeignStockHolding *stock3 = [[ForeignStockHolding alloc]init];
-
+        
         NSArray *stockArray = [NSArray arrayWithObjects:stock1,stock2,stock3,nil];
         
         for ( int i = 0; i<[stockArray count]; i++) {
@@ -294,13 +294,13 @@ int main(int argc, const char * argv[]) {
         [employee setWeightInKilos:83];
         [employee setHeightInMeters:1.83];
         [employee setEmployeeID:15];
-    
+        
         float employeeBMI = [employee bodyMassIndex];
         NSLog(@"Employee %d has a BMI of %f",[employee employeeID],employeeBMI);
         
         
         NSLog(@"=============================================================================");
-        NSLog(@"=============================== 객체 인스턴스 변수 ===============================");
+        NSLog(@"==================== 객체 인스턴스 변수 & 컬렉션 클래스 (정렬) =======================");
         
         NSMutableArray *employees = [[NSMutableArray alloc]init];
         
@@ -334,13 +334,34 @@ int main(int argc, const char * argv[]) {
             [randomEmployee addAssetsObject:asset];
         }
         
+        //Assets 가치순으로 배열정렬
+        NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueOfAssets" ascending:YES];
+        NSSortDescriptor *ei = [NSSortDescriptor sortDescriptorWithKey:@"employeeID" ascending:YES];
+        
+        [employees sortUsingDescriptors:[NSArray arrayWithObjects:voa,ei, nil]];
+        
         NSLog(@"Employees : %@",employees);
         NSLog(@"Giving up ownership of one employee");
         
         [employees removeObjectAtIndex:5];
         NSLog(@"Giving up ownership of array");
         
+        // NSPredicate ( 필터링 클래스 )
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 70"];
+        //NSArray *toBeReclaimed = [ ];
+        NSLog(@"");
+        
         employees = nil;
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
     }
