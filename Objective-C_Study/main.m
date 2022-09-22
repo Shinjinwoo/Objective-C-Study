@@ -394,6 +394,40 @@ int main(int argc, const char * argv[]) {
         NSLog(@"\n\nMoney is %@\n\n",currecny);
 
         
+        NSLog(@"=============================================================================");
+        NSLog(@"======================= NSString 인스턴스를 파일에 쓰기 ==========================");
+        
+        
+        NSMutableString *strWrite = [[NSMutableString alloc]init];
+        for ( int i = 0; i < 10; i ++) {
+            [strWrite appendString:@"웰 시 코 딩 \n"];
+        }
+        
+        //NSError 객체를 익셉션 상황시 인스턴스를 생성해서 처리
+        
+        NSError *error = nil;
+        
+        
+        BOOL success = [strWrite writeToFile:@"/Users/sinjin-u/Desktop/String.txt"
+              atomically:YES
+                encoding:NSUTF8StringEncoding
+                   error:&error];
+        
+        if (success) {
+            NSLog(@"done writing /Users/sinjin-u/Desktop/String.txt ");
+        } else {
+            NSLog(@"writing fails /Users/sinjin-u1/Desktop/String.txt \n resaon : %@",[error localizedDescription]);
+        }
+        
+        NSString *strRead = [[NSString alloc]initWithContentsOfFile:@"/etc/resolv.conf"
+                                                           encoding:NSASCIIStringEncoding
+                                                              error:&error];
+        if (!strRead){
+            NSLog(@"read failed \n reason : %@",[error localizedDescription]);
+        } else {
+            NSLog(@"resolv.conf looks like this : \n%@",strRead);
+        }
+        
         
         
         
