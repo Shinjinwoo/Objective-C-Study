@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSString *name;
     Person *spuse;
     NSMutableArray *dog;
-    NSMutableArray *assets;
+    NSMutableSet *assets;
 }
 
 @property int employeeID;

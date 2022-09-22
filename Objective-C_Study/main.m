@@ -300,9 +300,14 @@ int main(int argc, const char * argv[]) {
         
         
         NSLog(@"=============================================================================");
-        NSLog(@"==================== 객체 인스턴스 변수 & 컬렉션 클래스 (정렬) =======================");
+        NSLog(@"================= 객체 인스턴스 변수 & 컬렉션 클래스 (정렬,필터링) =====================");
         
         NSMutableArray *employees = [[NSMutableArray alloc]init];
+        
+        // NSDictionary / NSMutableDictionary
+        
+        //임원 NSDictionary 생성
+        NSMutableDictionary *executives = [[NSMutableDictionary alloc]init];
         
         
         for (int i = 0; i < 10; i++) {
@@ -314,7 +319,18 @@ int main(int argc, const char * argv[]) {
             [empPerson setEmployeeID:i];
             
             [employees addObject:empPerson];
+            
+            
+            if ( i == 0) {
+                [executives setObject:empPerson forKey:@"CEO"];
+            } else if ( i == 1) {
+                [executives setObject:empPerson forKey:@"CTO"];
+            }
+            
+            
         }
+        
+        NSMutableArray *allAssets = [[NSMutableArray alloc]init];
         
         for (int i = 0; i < 10; i++) {
             //비품 10개 생성 및 난수로 에셋의 벨류 설정
@@ -332,6 +348,7 @@ int main(int argc, const char * argv[]) {
             
             //찾은 직원에게 비품을 배정한다.
             [randomEmployee addAssetsObject:asset];
+            [allAssets addObject:asset];
         }
         
         //Assets 가치순으로 배열정렬
@@ -344,15 +361,40 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Giving up ownership of one employee");
         
         [employees removeObjectAtIndex:5];
-        NSLog(@"Giving up ownership of array");
+        
+        NSLog(@"allAssets : %@",allAssets);
+        NSLog(@"executives : %@",executives);
         
         // NSPredicate ( 필터링 클래스 )
         
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 70"];
-        //NSArray *toBeReclaimed = [ ];
-        NSLog(@"");
+        NSArray *toBeReclaimed = [allAssets filteredArrayUsingPredicate:predicate ];
+        NSLog(@"toBeReclaimed: %@",toBeReclaimed);
         
+        toBeReclaimed = nil;
+        
+        NSLog(@"Giving up ownership of array");
+        
+        allAssets = nil;
         employees = nil;
+        
+        
+        NSLog(@"=============================================================================");
+        NSLog(@"================= 객체 인스턴스 변수 & 컬렉션 클래스 (정렬,필터링) =====================");
+        
+        
+        NSLocale *here = [NSLocale currentLocale];
+        
+        // 상수 미사용
+        //NSString *currency = [here objectForKey:@"currency"];
+        
+        // 상수 사용
+        NSString *currecny = [here objectForKey:NSLocaleCurrencyCode];
+        
+        NSLog(@"\n\nMoney is %@\n\n",currecny);
+
+        
+        
         
         
         
