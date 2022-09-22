@@ -395,7 +395,7 @@ int main(int argc, const char * argv[]) {
 
         
         NSLog(@"=============================================================================");
-        NSLog(@"======================= NSString 인스턴스를 파일에 쓰기 ==========================");
+        NSLog(@"===================== NSString 인스턴스를 파일에 쓰기 및 읽기 ======================");
         
         
         NSMutableString *strWrite = [[NSMutableString alloc]init];
@@ -428,6 +428,43 @@ int main(int argc, const char * argv[]) {
             NSLog(@"resolv.conf looks like this : \n%@",strRead);
         }
         
+        
+        NSLog(@"=============================================================================");
+        NSLog(@"========================= NSData 객체를 파일에 쓰기  =============================");
+        
+        NSURL *url = [NSURL URLWithString:@"http://www.google.com/images/logos/ps_logo2.png"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                             returningResponse:NULL
+                                                         error:&error];
+        
+        NSURLSession *session = [NSURLSession sharedSession];
+        [[session dataTaskWithURL:[NSURL URLWithString:@"http://www.google.com/images/logos/ps_logo2.png"]
+                  completionHandler:^(NSData *data2,
+                                      NSURLResponse *response,
+                                      NSError *error) {
+                    // handle response
+            NSLog(@"|||||| Files Bytes : %@ ",data2);
+
+          }] resume];
+        
+        
+        if (!data) {
+            NSLog(@"fetch failed : %@",[error localizedDescription]);
+            return 1;
+        }
+        
+        NSLog(@"Files Bytes : %@ ",data);
+        
+        BOOL written = [data writeToFile:@"/Users/sinjin-u/Desktop/google.png"
+                                 options:0
+                                   error:&error];
+        
+        if (!written) {
+            NSLog(@"write falied : %@",[error localizedDescription]);
+            return 1;
+        }
         
         
         
