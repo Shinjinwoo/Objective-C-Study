@@ -473,18 +473,18 @@ int main(int argc, const char * argv[]) {
         NSURL *callbackUrl = [NSURL URLWithString:@"https://www.gutenberg.org/cache/epub/205/pg205.txt"];
         NSURLRequest *callbackRequest = [NSURLRequest requestWithURL:callbackUrl];
         
-        
+        //델리게이트 등을 활용한 헬퍼 객체 방식
         __unused NSURLConnection * fetchConn = [[NSURLConnection alloc]initWithRequest:callbackRequest
                                                 delegate:logger
                                         startImmediately:YES];
         
         
-
-//        __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
-//                                                          target:logger
-//                                                        selector:@selector(sayOuch:)
-//                                                        userInfo:nil
-//                                                         repeats:YES];
+        // 타겟 엔 액션 방식
+        __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+                                                          target:logger
+                                                        selector:@selector(sayOuch:)
+                                                        userInfo:nil
+                                                         repeats:YES];
         [[NSRunLoop currentRunLoop]run];
         
         
