@@ -11,6 +11,7 @@
 #import "Employee.h"
 #import "ForeignStockHolding.h"
 #import "Asset.h"
+#import "Logger.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -458,20 +459,33 @@ int main(int argc, const char * argv[]) {
             return 1;
         }
         
-        // 파일 읽기 
+        // 파일 읽기
         
         NSData *readSomeData = [NSData dataWithContentsOfFile:@"/Users/sinjin-u/Desktop/google.png"];
         NSLog(@"The File read from the Disk has %lu bytes",[readSomeData length]);
         
         
+        NSLog(@"==============================================================================");
+        NSLog(@"====================== Objective - C 에서의 Callback   =========================");
+        
+        Logger *logger = [[Logger alloc]init];
+        
+        NSURL *callbackUrl = [NSURL URLWithString:@"https://www.gutenberg.org/cache/epub/205/pg205.txt"];
+        NSURLRequest *callbackRequest = [NSURLRequest requestWithURL:callbackUrl];
         
         
+        __unused NSURLConnection * fetchConn = [[NSURLConnection alloc]initWithRequest:callbackRequest
+                                                delegate:logger
+                                        startImmediately:YES];
         
         
-        
-        
-        
-        
+
+//        __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+//                                                          target:logger
+//                                                        selector:@selector(sayOuch:)
+//                                                        userInfo:nil
+//                                                         repeats:YES];
+        [[NSRunLoop currentRunLoop]run];
         
         
         
