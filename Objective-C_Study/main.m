@@ -470,10 +470,18 @@ int main(int argc, const char * argv[]) {
         
         Logger *logger = [[Logger alloc]init];
         
+        //Notication을 활용한 여러객체에 이벤트 전달 방식
+        [[NSNotificationCenter defaultCenter]
+                addObserver:logger
+                   selector:@selector(zoneChange:)
+                    name:NSSystemTimeZoneDidChangeNotification
+         object:nil];
+        
+        
+        //델리게이트 등을 활용한 헬퍼 객체 방식
         NSURL *callbackUrl = [NSURL URLWithString:@"https://www.gutenberg.org/cache/epub/205/pg205.txt"];
         NSURLRequest *callbackRequest = [NSURLRequest requestWithURL:callbackUrl];
         
-        //델리게이트 등을 활용한 헬퍼 객체 방식
         __unused NSURLConnection * fetchConn = [[NSURLConnection alloc]initWithRequest:callbackRequest
                                                 delegate:logger
                                         startImmediately:YES];
