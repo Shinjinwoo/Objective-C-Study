@@ -12,6 +12,7 @@
 #import "ForeignStockHolding.h"
 #import "Asset.h"
 #import "Logger.h"
+#import "Appliance.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -496,6 +497,21 @@ int main(int argc, const char * argv[]) {
         [[NSRunLoop currentRunLoop]run];
         
         
+        
+        NSLog(@"==============================================================================");
+        NSLog(@"======================= Objective - C 에서의 init   ============================");
+        
+        
+        Appliance *a = [[Appliance alloc]init];
+        
+        NSLog(@"a is %@,",a);
+        
+        [a setProductName:@"Washing Machine"];
+        [a setVoltage:240];
+        
+        NSLog(@"a is %@",a);
+        
+    
         
     }
     return 0;

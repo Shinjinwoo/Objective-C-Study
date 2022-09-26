@@ -13,6 +13,7 @@
 		5E5CEBDA28D98E7C006FBF8E /* ForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD928D98E7C006FBF8E /* ForeignStockHolding.m */; };
 		5E5CEBDD28D9A78D006FBF8E /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBDC28D9A78D006FBF8E /* Asset.m */; };
 		5E5CEBE028DD3C0C006FBF8E /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBDF28DD3C0C006FBF8E /* Logger.m */; };
+		5E9EDFB128E166D20061B3FA /* Appliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9EDFB028E166D20061B3FA /* Appliance.m */; };
 		5EAA493728409D7C00A835A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAA493628409D7C00A835A3 /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		5E5CEBDC28D9A78D006FBF8E /* Asset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asset.m; sourceTree = "<group>"; };
 		5E5CEBDE28DD3C0C006FBF8E /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
 		5E5CEBDF28DD3C0C006FBF8E /* Logger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
+		5E9EDFAF28E166D20061B3FA /* Appliance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appliance.h; sourceTree = "<group>"; };
+		5E9EDFB028E166D20061B3FA /* Appliance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appliance.m; sourceTree = "<group>"; };
 		5EAA493328409D7C00A835A3 /* Objective-C_Study */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Objective-C_Study"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAA493628409D7C00A835A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +91,8 @@
 				5E5CEBDC28D9A78D006FBF8E /* Asset.m */,
 				5E5CEBDE28DD3C0C006FBF8E /* Logger.h */,
 				5E5CEBDF28DD3C0C006FBF8E /* Logger.m */,
+				5E9EDFAF28E166D20061B3FA /* Appliance.h */,
+				5E9EDFB028E166D20061B3FA /* Appliance.m */,
 			);
 			path = "Objective-C_Study";
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				5E5CEBDD28D9A78D006FBF8E /* Asset.m in Sources */,
 				5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */,
 				5E5CEBDA28D98E7C006FBF8E /* ForeignStockHolding.m in Sources */,
+				5E9EDFB128E166D20061B3FA /* Appliance.m in Sources */,
 				5E5CEBD728D98454006FBF8E /* Employee.m in Sources */,
 				5EAA493728409D7C00A835A3 /* main.m in Sources */,
 				5E5CEBE028DD3C0C006FBF8E /* Logger.m in Sources */,

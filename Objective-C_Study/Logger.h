@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableData *incomingData;
 }
 -(void) sayOuch : (NSTimer *)t;
+-(void) zoneChange :(NSNotification *)note;
 
 @end
 
