@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E0FF0CD28E16EC8008F0B84 /* OwnedAppliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0FF0CC28E16EC8008F0B84 /* OwnedAppliance.m */; };
 		5E5CEBCC28D9533B006FBF8E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBCB28D9533B006FBF8E /* Person.m */; };
 		5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD328D9795A006FBF8E /* StockHolding.m */; };
 		5E5CEBD728D98454006FBF8E /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5CEBD628D98454006FBF8E /* Employee.m */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E0FF0CB28E16EC8008F0B84 /* OwnedAppliance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OwnedAppliance.h; sourceTree = "<group>"; };
+		5E0FF0CC28E16EC8008F0B84 /* OwnedAppliance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OwnedAppliance.m; sourceTree = "<group>"; };
 		5E5CEBCA28D9533B006FBF8E /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		5E5CEBCB28D9533B006FBF8E /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		5E5CEBD228D9795A006FBF8E /* StockHolding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StockHolding.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				5E5CEBDF28DD3C0C006FBF8E /* Logger.m */,
 				5E9EDFAF28E166D20061B3FA /* Appliance.h */,
 				5E9EDFB028E166D20061B3FA /* Appliance.m */,
+				5E0FF0CB28E16EC8008F0B84 /* OwnedAppliance.h */,
+				5E0FF0CC28E16EC8008F0B84 /* OwnedAppliance.m */,
 			);
 			path = "Objective-C_Study";
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				5E9EDFB128E166D20061B3FA /* Appliance.m in Sources */,
 				5E5CEBD728D98454006FBF8E /* Employee.m in Sources */,
 				5EAA493728409D7C00A835A3 /* main.m in Sources */,
+				5E0FF0CD28E16EC8008F0B84 /* OwnedAppliance.m in Sources */,
 				5E5CEBE028DD3C0C006FBF8E /* Logger.m in Sources */,
 				5E5CEBD428D9795A006FBF8E /* StockHolding.m in Sources */,
 			);

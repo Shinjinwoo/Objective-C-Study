@@ -13,6 +13,7 @@
 #import "Asset.h"
 #import "Logger.h"
 #import "Appliance.h"
+#import "OwnedAppliance.h"
 
 float remainingAngle(float angleA , float angleB) {
     float totalAngle = 180.0;
@@ -510,6 +511,12 @@ int main(int argc, const char * argv[]) {
         [a setVoltage:240];
         
         NSLog(@"a is %@",a);
+        
+        
+        OwnedAppliance *oa = [[OwnedAppliance alloc]initWithProductName:@"Toaster"];
+        
+        
+        
         
     
         
