@@ -470,32 +470,32 @@ int main(int argc, const char * argv[]) {
         NSLog(@"==============================================================================");
         NSLog(@"====================== Objective - C 에서의 Callback   =========================");
         
-        Logger *logger = [[Logger alloc]init];
-        
-        //Notication을 활용한 여러객체에 이벤트 전달 방식
-        [[NSNotificationCenter defaultCenter]
-                addObserver:logger
-                   selector:@selector(zoneChange:)
-                    name:NSSystemTimeZoneDidChangeNotification
-         object:nil];
-        
-        
-        //델리게이트 등을 활용한 헬퍼 객체 방식
-        NSURL *callbackUrl = [NSURL URLWithString:@"https://www.gutenberg.org/cache/epub/205/pg205.txt"];
-        NSURLRequest *callbackRequest = [NSURLRequest requestWithURL:callbackUrl];
-        
-        __unused NSURLConnection * fetchConn = [[NSURLConnection alloc]initWithRequest:callbackRequest
-                                                delegate:logger
-                                        startImmediately:YES];
-        
-        
-        // 타겟 엔 액션 방식
-        __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
-                                                          target:logger
-                                                        selector:@selector(sayOuch:)
-                                                        userInfo:nil
-                                                         repeats:YES];
-        [[NSRunLoop currentRunLoop]run];
+//        Logger *logger = [[Logger alloc]init];
+//
+//        //Notication을 활용한 여러객체에 이벤트 전달 방식
+//        [[NSNotificationCenter defaultCenter]
+//                addObserver:logger
+//                   selector:@selector(zoneChange:)
+//                    name:NSSystemTimeZoneDidChangeNotification
+//         object:nil];
+//
+//
+//        //델리게이트 등을 활용한 헬퍼 객체 방식
+//        NSURL *callbackUrl = [NSURL URLWithString:@"https://www.gutenberg.org/cache/epub/205/pg205.txt"];
+//        NSURLRequest *callbackRequest = [NSURLRequest requestWithURL:callbackUrl];
+//
+//        __unused NSURLConnection * fetchConn = [[NSURLConnection alloc]initWithRequest:callbackRequest
+//                                                delegate:logger
+//                                        startImmediately:YES];
+//
+//
+//        // 타겟 엔 액션 방식
+//        __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+//                                                          target:logger
+//                                                        selector:@selector(sayOuch:)
+//                                                        userInfo:nil
+//                                                         repeats:YES];
+//        [[NSRunLoop currentRunLoop]run];
         
         
         
@@ -506,11 +506,13 @@ int main(int argc, const char * argv[]) {
         Appliance *a = [[Appliance alloc]init];
         
         NSLog(@"a is %@,",a);
+        NSLog(@"%@ is a %d Voltage Merchin",[a productName ],[a voltage]);
         
         [a setProductName:@"Washing Machine"];
         [a setVoltage:240];
         
         NSLog(@"a is %@",a);
+        NSLog(@"%@ is a %d Voltage Merchin",[a productName ],[a voltage]);
         
         
         OwnedAppliance *oa = [[OwnedAppliance alloc]initWithProductName:@"Toaster"];

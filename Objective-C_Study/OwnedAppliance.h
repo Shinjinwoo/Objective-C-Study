@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableSet *ownerNames;
 }
 
+
+//지정화 된 초기화 메소드
 - (id) initWithProductName:(NSString *)pn
             firstOwnerName:(NSString *)n;
 - (void)addOwnerNamesObject:(NSString *)n;

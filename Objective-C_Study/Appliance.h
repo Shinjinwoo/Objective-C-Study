@@ -10,8 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Appliance : NSObject{
-    NSString *productName;
-    int voltage;
+//    NSString *productName;
+//    int voltage;
 }
 
 @property(copy)NSString *productName;
